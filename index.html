@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Dev | Fundamentos de la Programación I</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">&lt;DevPortfolio /&gt;</div>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Presentación -->
+    <section id="sobre-mi" class="hero">
+      <span class="badge">UNPAZ · Lic. en Producción y Desarrollo de Videojuegos</span>
+      <h1>Hola, soy <span class="destacado">[Tu Nombre]</span></h1>
+      <p>
+        Trabajo final para la materia <strong>Fundamentos de la Programación I</strong>. 
+        Aquí presento mis primeros desarrollos, lógica de algoritmos y prototipos de videojuegos.
+      </p>
+    </section>
+
+    <!-- Sección de Proyectos con Filtros -->
+    <section id="proyectos">
+      <div class="proyectos-header">
+        <h2>Mis Proyectos</h2>
+        <div class="filtros">
+          <button class="btn-filtro activo" data-categoria="todos">Todos</button>
+          <button class="btn-filtro" data-categoria="logica">Lógica / Consola</button>
+          <button class="btn-filtro" data-categoria="juego">Prototipos</button>
+        </div>
+      </div>
+
+      <div class="grid-proyectos">
+        <!-- Proyecto 1 -->
+        <article class="card" data-categoria="juego">
+          <div class="card-tag">Prototipo</div>
+          <h3>Adivina el Número</h3>
+          <p>Juego por consola utilizando estructuras condicionales, ciclos while y generación de números aleatorios.</p>
+          <button class="btn-demo" onclick="mostrarDetalle('Adivina el Número', 'Implementado con estructuras repetitivas y validación de entradas del usuario.')">Ver detalles</button>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="card" data-categoria="logica">
+          <div class="card-tag">Lógica / Consola</div>
+          <h3>Sistema de Puntajes</h3>
+          <p>Programa para registrar, ordenar y calcular el promedio de puntajes de jugadores usando arreglos (arrays).</p>
+          <button class="btn-demo" onclick="mostrarDetalle('Sistema de Puntajes', 'Uso de vectores, recorrido con ciclos for y búsqueda de máximos y mínimos.')">Ver detalles</button>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="card" data-categoria="juego">
+          <div class="card-tag">Prototipo</div>
+          <h3>Aventura de Texto RPG</h3>
+          <p>Historia interactiva con toma de decisiones, sistema básico de vida (HP) e inventario.</p>
+          <button class="btn-demo" onclick="mostrarDetalle('Aventura de Texto RPG', 'Modularización mediante funciones y control de estados del jugador.')">Ver detalles</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal simple para ver detalles del proyecto -->
+  <div id="modal" class="modal oculto">
+    <div class="modal-contenido">
+      <span id="cerrar-modal" class="cerrar">&times;</span>
+      <h3 id="modal-titulo">Título</h3>
+      <p id="modal-texto">Descripción técnica...</p>
+    </div>
+  </div>
+
+  <footer id="contacto">
+    <p>Desarrollado por <strong>[Tu Nombre]</strong> · Comisión [Tu Comisión] · UNPAZ 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
