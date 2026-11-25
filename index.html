@@ -7,29 +7,48 @@
   <meta name="description" content="Portfolio de Pablo Romero, estudiante de la Licenciatura en Producción y Desarrollo de Videojuegos (UNPAZ). Trabajos prácticos en Scratch, RPG Maker MV y Godot.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="corazon" viewBox="0 0 7 6">
+      <path shape-rendering="crispEdges" fill="currentColor" d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/>
+    </symbol>
+  </svg>
+
+
   <header class="cabecera">
     <div class="contenedor cabecera-interna">
-      <a class="marca" href="#inicio">Pablo Romero</a>
+      <a class="marca" href="#inicio">Portfolio</a>
       <nav aria-label="Principal">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Trabajos</a>
-        <a href="#contacto">Contacto</a>
       </nav>
     </div>
+    <div class="progreso" aria-hidden="true"></div>
   </header>
 
   <main id="contenido">
     <!-- Inicio -->
     <section id="inicio" class="hero">
+      <span class="pixel p1" aria-hidden="true"></span>
+      <span class="pixel p2" aria-hidden="true"></span>
+      <span class="pixel p3" aria-hidden="true"></span>
+      <span class="pixel p4" aria-hidden="true"></span>
+      <span class="pixel p5" aria-hidden="true"></span>
       <div class="contenedor hero-grid">
         <div class="hero-texto">
-          <p class="hero-contexto">Lic. en Producción y Desarrollo de Videojuegos, UNPAZ</p>
+          <p class="hero-contexto">
+            <span class="vidas" aria-hidden="true">
+              <svg viewBox="0 0 7 6"><use href="#corazon"/></svg>
+              <svg viewBox="0 0 7 6"><use href="#corazon"/></svg>
+              <svg viewBox="0 0 7 6"><use href="#corazon"/></svg>
+            </span>
+            Lic. en Producción y Desarrollo de Videojuegos, UNPAZ
+          </p>
           <h1>Pablo Romero</h1>
           <p class="hero-bajada">
             Estoy aprendiendo a hacer videojuegos. Este portfolio reúne los tres trabajos
@@ -38,16 +57,21 @@
           </p>
           <div class="hero-acciones">
             <a class="boton boton-primario" href="#proyectos">Ver trabajos</a>
-            <a class="boton boton-secundario" href="#contacto">Contactarme</a>
+            <a class="boton boton-secundario" href="#sobre-mi">Sobre mí</a>
           </div>
         </div>
 
-        <pre class="terminal hero-terminal" aria-label="Lista de los tres trabajos prácticos presentada como una ventana de consola"><span class="t-sistema">$ ls trabajos</span>
-TP1  Scratch
+        <div class="ventana hero-terminal" role="img" aria-label="Lista de los tres trabajos prácticos presentada como una ventana de consola: TP1 Scratch, TP2 RPG Maker MV y TP3 Godot">
+          <div class="ventana-barra" aria-hidden="true">
+            <span class="punto"></span><span class="punto"></span><span class="punto"></span>
+            <span class="ventana-titulo">Console</span>
+          </div>
+          <pre class="terminal" aria-hidden="true">TP1  Scratch
 TP2  RPG Maker MV
 TP3  Godot
 
-<span class="t-sistema">$</span> <span class="cursor" aria-hidden="true"></span></pre>
+<span class="t-sistema">&gt;</span> <span class="cursor"></span></pre>
+        </div>
       </div>
     </section>
 
@@ -70,9 +94,9 @@ TP3  Godot
           <div class="sobre-lista">
             <h3>Herramientas que usé</h3>
             <ul>
-              <li>Scratch</li>
-              <li>RPG Maker MV</li>
-              <li>Godot</li>
+              <li class="tp1">Scratch</li>
+              <li class="tp2">RPG Maker MV</li>
+              <li class="tp3">Godot</li>
             </ul>
           </div>
         </div>
@@ -87,9 +111,9 @@ TP3  Godot
 
         <div class="lista-proyectos">
           <!-- TP1 -->
-          <article class="proyecto" id="tp1">
+          <article class="proyecto tp1" id="tp1">
             <div class="proyecto-info">
-              <p class="proyecto-tipo">TP1</p>
+              <p class="proyecto-tipo">Nivel 1</p>
               <h3>Scratch</h3>
               <p>
                 Primer trabajo práctico de la cursada, desarrollado en Scratch con programación
@@ -97,6 +121,7 @@ TP3  Godot
               </p>
               <div class="proyecto-acciones">
                 <a class="boton boton-primario" href="https://drive.google.com/drive/folders/1s2l9pV7gFDfcoLtMY0ai1pBovXLUKJxO?usp=drive_link" target="_blank" rel="noopener">Abrir carpeta en Drive</a>
+                <a class="boton boton-secundario" href="https://youtu.be/C0yg5BQ_MIQ" target="_blank" rel="noopener">Ver video en YouTube</a>
               </div>
             </div>
             <pre class="terminal" aria-label="Ficha del TP1"><span class="t-sistema">Entrega:</span>      TP1
@@ -106,9 +131,9 @@ TP3  Godot
           </article>
 
           <!-- TP2 -->
-          <article class="proyecto" id="tp2">
+          <article class="proyecto tp2" id="tp2">
             <div class="proyecto-info">
-              <p class="proyecto-tipo">TP2</p>
+              <p class="proyecto-tipo">Nivel 2</p>
               <h3>RPG Maker MV</h3>
               <p>
                 Segundo trabajo práctico, desarrollado con RPG Maker MV, un motor pensado para
@@ -116,6 +141,7 @@ TP3  Godot
               </p>
               <div class="proyecto-acciones">
                 <a class="boton boton-primario" href="https://drive.google.com/drive/folders/1EqH6-xCWWyYZqRAkaNTjg5H1vo4pBxU4?usp=drive_link" target="_blank" rel="noopener">Abrir carpeta en Drive</a>
+                <a class="boton boton-secundario" href="https://youtu.be/daBwGl_xTNQ" target="_blank" rel="noopener">Ver video en YouTube</a>
               </div>
             </div>
             <pre class="terminal" aria-label="Ficha del TP2"><span class="t-sistema">Entrega:</span>      TP2
@@ -125,9 +151,9 @@ TP3  Godot
           </article>
 
           <!-- TP3 -->
-          <article class="proyecto" id="tp3">
+          <article class="proyecto tp3" id="tp3">
             <div class="proyecto-info">
-              <p class="proyecto-tipo">TP3</p>
+              <p class="proyecto-tipo">Nivel 3</p>
               <h3>Godot</h3>
               <p>
                 Tercer trabajo práctico, desarrollado en Godot, un motor de videojuegos de código
@@ -147,20 +173,9 @@ TP3  Godot
     </section>
   </main>
 
-  <footer id="contacto" class="pie">
-    <div class="contenedor pie-grid">
-      <div>
-        <h2>Contacto</h2>
-        <p>Si querés ver más sobre estos trabajos o tenés alguna devolución, escribime.</p>
-      </div>
-      <ul class="pie-enlaces">
-        <li><a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></li>
-        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-    </div>
+  <footer class="pie">
     <div class="contenedor pie-legal">
-      <p>Pablo Romero, comisión [Tu Comisión]. Fundamentos de la Programación I, UNPAZ, 2026.</p>
+      <p>Pablo Romero, comisión B1 (Tarde). Fundamentos de la Programación I, UNPAZ, 2026.</p>
     </div>
   </footer>
 
