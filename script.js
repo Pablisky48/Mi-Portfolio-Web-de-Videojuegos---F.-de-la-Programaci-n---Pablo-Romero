@@ -34,3 +34,150 @@ function actualizarProgreso() {
 window.addEventListener('scroll', actualizarProgreso, { passive: true });
 window.addEventListener('resize', actualizarProgreso);
 actualizarProgreso();
+
+// Consola interactiva: empieza apagada (OFF) y se desbloquea con un código
+const CODIGO_ACCESO = 'facu';
+
+const interruptor = document.getElementById('interruptor');
+const interruptorTexto = document.getElementById('interruptor-texto');
+const consolaEstatica = document.getElementById('consola-estatica');
+const consolaActiva = document.getElementById('consola-activa');
+const consolaSalida = document.getElementById('consola-salida');
+const consolaForm = document.getElementById('consola-form');
+const consolaEntrada = document.getElementById('consola-entrada');
+const consolaPrompt = document.getElementById('consola-prompt');
+
+if (interruptor && consolaActiva) {
+  let encendida = false;
+  let desbloqueada = false;
+
+  function escribir(texto, clase = '') {
+    const linea = document.createElement('div');
+    linea.className = `linea ${clase}`.trim();
+    linea.textContent = texto;
+    consolaSalida.appendChild(linea);
+    consolaSalida.scrollTop = consolaSalida.scrollHeight;
+  }
+
+  function mostrarEstado() {
+    interruptor.setAttribute('aria-checked', String(encendida));
+    interruptorTexto.textContent = encendida ? 'ON' : 'OFF';
+    consolaEstatica.hidden = encendida;
+    consolaActiva.hidden = !encendida;
+  }
+
+  function encender() {
+    encendida = true;
+    mostrarEstado();
+    if (!consolaSalida.children.length) {
+      if (desbloqueada) {
+        escribir('Consola lista. Escribí "ayuda" para ver los comandos.', 'ok');
+      } else {
+        escribir('Consola protegida. Ingresá el código de acceso.', 'sistema');
+      }
+    }
+    consolaPrompt.textContent = desbloqueada ? '>' : 'código>';
+    consolaEntrada.focus();
+  }
+
+  function apagar() {
+    encendida = false;
+    mostrarEstado();
+  }
+
+  function irA(id) {
+    const destino = document.getElementById(id);
+    if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const comandos = {
+    ayuda() {
+      escribir('Comandos disponibles:', 'sistema');
+      escribir('  trabajos   lista los trabajos prácticos');
+      escribir('  sobre      quién soy');
+      escribir('  scratch    ir al TP1');
+      escribir('  rpg        ir al TP2');
+      escribir('  godot      ir al TP3');
+      escribir('  hola       un saludo');
+      escribir('  limpiar    borra la pantalla');
+      escribir('  salir      apaga la consola');
+    },
+    trabajos() {
+      escribir('TP1  Scratch');
+      escribir('TP2  RPG Maker MV');
+      escribir('TP3  Godot');
+    },
+    sobre() {
+      escribir('Pablo Romero, estudiante de Producción y Desarrollo de Videojuegos en la UNPAZ.');
+    },
+    scratch() {
+      escribir('Yendo al TP1...', 'sistema');
+      irA('tp1');
+    },
+    rpg() {
+      escribir('Yendo al TP2...', 'sistema');
+      irA('tp2');
+    },
+    godot() {
+      escribir('Yendo al TP3...', 'sistema');
+      irA('tp3');
+    },
+    hola() {
+      escribir('¡Hola! Gracias por visitar mi portfolio.', 'ok');
+    },
+    limpiar() {
+      consolaSalida.textContent = '';
+    },
+    salir() {
+      escribir('Apagando consola...', 'sistema');
+      apagar();
+      interruptor.focus();
+    }
+  };
+  comandos.clear = comandos.limpiar;
+  comandos.exit = comandos.salir;
+
+  interruptor.addEventListener('click', () => {
+    if (encendida) {
+      apagar();
+    } else {
+      encender();
+    }
+  });
+
+  consolaForm.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+    const valor = consolaEntrada.value.trim();
+    consolaEntrada.value = '';
+    if (!valor) return;
+
+    if (!desbloqueada) {
+      escribir(`código> ${'*'.repeat(valor.length)}`, 'eco');
+      if (valor.toLowerCase() === CODIGO_ACCESO) {
+        desbloqueada = true;
+        consolaPrompt.textContent = '>';
+        escribir('Acceso concedido. Escribí "ayuda" para ver los comandos.', 'ok');
+      } else {
+        escribir('Código incorrecto. Probá de nuevo.', 'error');
+      }
+      return;
+    }
+
+    escribir(`> ${valor}`, 'eco');
+    const accion = comandos[valor.toLowerCase()];
+    if (accion) {
+      accion();
+    } else {
+      escribir(`Comando no reconocido: ${valor}. Escribí "ayuda".`, 'error');
+    }
+  });
+
+  consolaEntrada.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape') {
+      apagar();
+      interruptor.focus();
+    }
+  });
+
+  mostrarEstado();
+}
