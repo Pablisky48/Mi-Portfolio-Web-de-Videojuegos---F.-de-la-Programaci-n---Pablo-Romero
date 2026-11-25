@@ -3,80 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Dev | Fundamentos de la Programación I</title>
+  <title>Pablo Romero | Portfolio de Fundamentos de la Programación I</title>
+  <meta name="description" content="Portfolio de Pablo Romero, estudiante de la Licenciatura en Producción y Desarrollo de Videojuegos (UNPAZ). Trabajos prácticos en Scratch, RPG Maker MV y Godot.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">&lt;DevPortfolio /&gt;</div>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interna">
+      <a class="marca" href="#inicio">Pablo Romero</a>
+      <nav aria-label="Principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Trabajos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- Presentación -->
-    <section id="sobre-mi" class="hero">
-      <span class="badge">UNPAZ · Lic. en Producción y Desarrollo de Videojuegos</span>
-      <h1>Hola, soy <span class="destacado">[Tu Nombre]</span></h1>
-      <p>
-        Trabajo final para la materia <strong>Fundamentos de la Programación I</strong>. 
-        Aquí presento mis primeros desarrollos, lógica de algoritmos y prototipos de videojuegos.
-      </p>
+  <main id="contenido">
+    <!-- Inicio -->
+    <section id="inicio" class="hero">
+      <div class="contenedor hero-grid">
+        <div class="hero-texto">
+          <p class="hero-contexto">Lic. en Producción y Desarrollo de Videojuegos, UNPAZ</p>
+          <h1>Pablo Romero</h1>
+          <p class="hero-bajada">
+            Estoy aprendiendo a hacer videojuegos. Este portfolio reúne los tres trabajos
+            prácticos de la cursada, cada uno hecho con una herramienta distinta: Scratch,
+            RPG Maker MV y Godot.
+          </p>
+          <div class="hero-acciones">
+            <a class="boton boton-primario" href="#proyectos">Ver trabajos</a>
+            <a class="boton boton-secundario" href="#contacto">Contactarme</a>
+          </div>
+        </div>
+
+        <pre class="terminal hero-terminal" aria-label="Lista de los tres trabajos prácticos presentada como una ventana de consola"><span class="t-sistema">$ ls trabajos</span>
+TP1  Scratch
+TP2  RPG Maker MV
+TP3  Godot
+
+<span class="t-sistema">$</span> <span class="cursor" aria-hidden="true"></span></pre>
+      </div>
     </section>
 
-    <!-- Sección de Proyectos con Filtros -->
-    <section id="proyectos">
-      <div class="proyectos-header">
-        <h2>Mis Proyectos</h2>
-        <div class="filtros">
-          <button class="btn-filtro activo" data-categoria="todos">Todos</button>
-          <button class="btn-filtro" data-categoria="logica">Lógica / Consola</button>
-          <button class="btn-filtro" data-categoria="juego">Prototipos</button>
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="seccion">
+      <div class="contenedor">
+        <h2>Sobre mí</h2>
+        <div class="sobre-grid">
+          <div class="sobre-texto">
+            <p>
+              Soy estudiante de la Licenciatura en Producción y Desarrollo de Videojuegos en la
+              Universidad Nacional de José C. Paz. Durante la cursada trabajé con tres
+              herramientas distintas, cada una con su propia forma de pensar un juego.
+            </p>
+            <p>
+              Me interesa el diseño y el desarrollo de juegos, y quiero seguir sumando
+              herramientas para construir mis propios prototipos.
+            </p>
+          </div>
+          <div class="sobre-lista">
+            <h3>Herramientas que usé</h3>
+            <ul>
+              <li>Scratch</li>
+              <li>RPG Maker MV</li>
+              <li>Godot</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid-proyectos">
-        <!-- Proyecto 1 -->
-        <article class="card" data-categoria="juego">
-          <div class="card-tag">Prototipo</div>
-          <h3>Adivina el Número</h3>
-          <p>Juego por consola utilizando estructuras condicionales, ciclos while y generación de números aleatorios.</p>
-          <button class="btn-demo" onclick="mostrarDetalle('Adivina el Número', 'Implementado con estructuras repetitivas y validación de entradas del usuario.')">Ver detalles</button>
-        </article>
+    <!-- Trabajos prácticos -->
+    <section id="proyectos" class="seccion">
+      <div class="contenedor">
+        <h2>Trabajos prácticos</h2>
+        <p class="seccion-bajada">Tres entregas, tres herramientas. Cada una tiene su carpeta con el material completo.</p>
 
-        <!-- Proyecto 2 -->
-        <article class="card" data-categoria="logica">
-          <div class="card-tag">Lógica / Consola</div>
-          <h3>Sistema de Puntajes</h3>
-          <p>Programa para registrar, ordenar y calcular el promedio de puntajes de jugadores usando arreglos (arrays).</p>
-          <button class="btn-demo" onclick="mostrarDetalle('Sistema de Puntajes', 'Uso de vectores, recorrido con ciclos for y búsqueda de máximos y mínimos.')">Ver detalles</button>
-        </article>
+        <div class="lista-proyectos">
+          <!-- TP1 -->
+          <article class="proyecto" id="tp1">
+            <div class="proyecto-info">
+              <p class="proyecto-tipo">TP1</p>
+              <h3>Scratch</h3>
+              <p>
+                Primer trabajo práctico de la cursada, desarrollado en Scratch con programación
+                en bloques. <!-- Completar: qué hace tu proyecto -->
+              </p>
+              <div class="proyecto-acciones">
+                <a class="boton boton-primario" href="https://drive.google.com/drive/folders/1s2l9pV7gFDfcoLtMY0ai1pBovXLUKJxO?usp=drive_link" target="_blank" rel="noopener">Abrir carpeta en Drive</a>
+              </div>
+            </div>
+            <pre class="terminal" aria-label="Ficha del TP1"><span class="t-sistema">Entrega:</span>      TP1
+<span class="t-sistema">Herramienta:</span>  Scratch
+<span class="t-sistema">Formato:</span>      Programación en bloques
+<span class="t-sistema">Material:</span>     Carpeta en Google Drive</pre>
+          </article>
 
-        <!-- Proyecto 3 -->
-        <article class="card" data-categoria="juego">
-          <div class="card-tag">Prototipo</div>
-          <h3>Aventura de Texto RPG</h3>
-          <p>Historia interactiva con toma de decisiones, sistema básico de vida (HP) e inventario.</p>
-          <button class="btn-demo" onclick="mostrarDetalle('Aventura de Texto RPG', 'Modularización mediante funciones y control de estados del jugador.')">Ver detalles</button>
-        </article>
+          <!-- TP2 -->
+          <article class="proyecto" id="tp2">
+            <div class="proyecto-info">
+              <p class="proyecto-tipo">TP2</p>
+              <h3>RPG Maker MV</h3>
+              <p>
+                Segundo trabajo práctico, desarrollado con RPG Maker MV, un motor pensado para
+                crear juegos de rol. <!-- Completar: qué hace tu proyecto -->
+              </p>
+              <div class="proyecto-acciones">
+                <a class="boton boton-primario" href="https://drive.google.com/drive/folders/1EqH6-xCWWyYZqRAkaNTjg5H1vo4pBxU4?usp=drive_link" target="_blank" rel="noopener">Abrir carpeta en Drive</a>
+              </div>
+            </div>
+            <pre class="terminal" aria-label="Ficha del TP2"><span class="t-sistema">Entrega:</span>      TP2
+<span class="t-sistema">Herramienta:</span>  RPG Maker MV
+<span class="t-sistema">Formato:</span>      Juego de rol con motor
+<span class="t-sistema">Material:</span>     Carpeta en Google Drive</pre>
+          </article>
+
+          <!-- TP3 -->
+          <article class="proyecto" id="tp3">
+            <div class="proyecto-info">
+              <p class="proyecto-tipo">TP3</p>
+              <h3>Godot</h3>
+              <p>
+                Tercer trabajo práctico, desarrollado en Godot, un motor de videojuegos de código
+                abierto. <!-- Completar: qué hace tu proyecto -->
+              </p>
+              <div class="proyecto-acciones">
+                <a class="boton boton-primario" href="https://drive.google.com/drive/folders/1pCOC8dO1cnNsR7Y6p9lfxhZzP9IT4-sz?usp=drive_link" target="_blank" rel="noopener">Abrir carpeta en Drive</a>
+              </div>
+            </div>
+            <pre class="terminal" aria-label="Ficha del TP3"><span class="t-sistema">Entrega:</span>      TP3
+<span class="t-sistema">Herramienta:</span>  Godot
+<span class="t-sistema">Formato:</span>      Prototipo con motor de juegos
+<span class="t-sistema">Material:</span>     Carpeta en Google Drive</pre>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Modal simple para ver detalles del proyecto -->
-  <div id="modal" class="modal oculto">
-    <div class="modal-contenido">
-      <span id="cerrar-modal" class="cerrar">&times;</span>
-      <h3 id="modal-titulo">Título</h3>
-      <p id="modal-texto">Descripción técnica...</p>
+  <footer id="contacto" class="pie">
+    <div class="contenedor pie-grid">
+      <div>
+        <h2>Contacto</h2>
+        <p>Si querés ver más sobre estos trabajos o tenés alguna devolución, escribime.</p>
+      </div>
+      <ul class="pie-enlaces">
+        <li><a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
     </div>
-  </div>
-
-  <footer id="contacto">
-    <p>Desarrollado por <strong>[Tu Nombre]</strong> · Comisión [Tu Comisión] · UNPAZ 2026</p>
+    <div class="contenedor pie-legal">
+      <p>Pablo Romero, comisión [Tu Comisión]. Fundamentos de la Programación I, UNPAZ, 2026.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
