@@ -125,6 +125,12 @@ if (interruptor && consolaActiva) {
     hola() {
       escribir('¡Hola! Gracias por visitar mi portfolio.', 'ok');
     },
+    suarez() {
+      escribir('Profe Suárez:', 'ok');
+      escribir('Gracias por enseñarme a pensar como programador.', 'ok');
+      escribir('Este portfolio es mi primer paso para hacer videojuegos.', 'ok');
+      escribir('¡Gracias por todo! Pablo Romero', 'ok');
+    },
     limpiar() {
       consolaSalida.textContent = '';
     },
@@ -164,7 +170,9 @@ if (interruptor && consolaActiva) {
     }
 
     escribir(`> ${valor}`, 'eco');
-    const accion = comandos[valor.toLowerCase()];
+    // Normaliza mayúsculas y tildes para reconocer, por ejemplo, "Suárez"
+    const clave = valor.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const accion = comandos[clave];
     if (accion) {
       accion();
     } else {
