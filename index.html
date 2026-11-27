@@ -7,18 +7,11 @@
   <meta name="description" content="Portfolio de Pablo Romero, estudiante de la Licenciatura en Producción y Desarrollo de Videojuegos (UNPAZ). Trabajos prácticos en Scratch, RPG Maker MV y Godot.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
-
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="corazon" viewBox="0 0 7 6">
-      <path shape-rendering="crispEdges" fill="currentColor" d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/>
-    </symbol>
-  </svg>
-
 
   <header class="cabecera">
     <div class="contenedor cabecera-interna">
@@ -28,63 +21,22 @@
         <a href="#proyectos">Trabajos</a>
       </nav>
     </div>
-    <div class="progreso" aria-hidden="true"></div>
   </header>
 
   <main id="contenido">
     <!-- Inicio -->
     <section id="inicio" class="hero">
-      <span class="pixel p1" aria-hidden="true"></span>
-      <span class="pixel p2" aria-hidden="true"></span>
-      <span class="pixel p3" aria-hidden="true"></span>
-      <span class="pixel p4" aria-hidden="true"></span>
-      <span class="pixel p5" aria-hidden="true"></span>
-      <div class="contenedor hero-grid">
-        <div class="hero-texto">
-          <p class="hero-contexto">
-            <span class="vidas" aria-hidden="true">
-              <svg viewBox="0 0 7 6"><use href="#corazon"/></svg>
-              <svg viewBox="0 0 7 6"><use href="#corazon"/></svg>
-              <svg viewBox="0 0 7 6"><use href="#corazon"/></svg>
-            </span>
-            Lic. en Producción y Desarrollo de Videojuegos, UNPAZ
-          </p>
-          <h1>Pablo Romero</h1>
-          <p class="hero-bajada">
-            Estoy aprendiendo a hacer videojuegos. Este portfolio reúne los tres trabajos
-            prácticos de la cursada, cada uno hecho con una herramienta distinta: Scratch,
-            RPG Maker MV y Godot.
-          </p>
-          <div class="hero-acciones">
-            <a class="boton boton-primario" href="#proyectos">Ver trabajos</a>
-            <a class="boton boton-secundario" href="#sobre-mi">Sobre mí</a>
-          </div>
-        </div>
-
-        <div class="ventana hero-terminal">
-          <div class="ventana-barra">
-            <span class="punto" aria-hidden="true"></span><span class="punto" aria-hidden="true"></span><span class="punto" aria-hidden="true"></span>
-            <span class="ventana-titulo" aria-hidden="true">Console</span>
-            <button class="interruptor" id="interruptor" type="button" role="switch" aria-checked="false" aria-label="Consola interactiva">
-              <span class="interruptor-texto" id="interruptor-texto" aria-hidden="true">OFF</span>
-              <span class="interruptor-pista" aria-hidden="true"><span class="interruptor-perilla"></span></span>
-            </button>
-          </div>
-
-          <pre class="terminal" id="consola-estatica" role="img" aria-label="Lista de los tres trabajos prácticos presentada como una ventana de consola: TP1 Scratch, TP2 RPG Maker MV y TP3 Godot">TP1  Scratch
-TP2  RPG Maker MV
-TP3  Godot
-
-<span class="t-sistema">&gt;</span> <span class="cursor"></span></pre>
-
-          <div class="consola-activa" id="consola-activa" hidden>
-            <div class="consola-salida" id="consola-salida" role="log" aria-live="polite"></div>
-            <form class="consola-linea" id="consola-form" autocomplete="off">
-              <label class="oculto-visual" for="consola-entrada">Escribir en la consola</label>
-              <span class="consola-prompt" id="consola-prompt" aria-hidden="true">&gt;</span>
-              <input class="consola-entrada" id="consola-entrada" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="80">
-            </form>
-          </div>
+      <div class="contenedor">
+        <p class="hero-contexto">Lic. en Producción y Desarrollo de Videojuegos, UNPAZ</p>
+        <h1>Pablo Romero</h1>
+        <p class="hero-bajada">
+          Estoy aprendiendo a hacer videojuegos. Este portfolio reúne los tres trabajos
+          prácticos de la cursada, cada uno hecho con una herramienta distinta: Scratch,
+          RPG Maker MV y Godot.
+        </p>
+        <div class="hero-acciones">
+          <a class="boton boton-primario" href="#proyectos">Ver trabajos</a>
+          <a class="boton boton-secundario" href="#sobre-mi">Sobre mí</a>
         </div>
       </div>
     </section>
@@ -150,28 +102,24 @@ TP3  Godot
               </div>
             </div>
             <div class="proyecto-media">
-              <div class="ventana reproductor">
-                <div class="ventana-barra" aria-hidden="true">
-                  <span class="punto"></span><span class="punto"></span><span class="punto"></span>
-                  <span class="ventana-titulo">video TP1</span>
-                </div>
+              <div class="medio">
+                <p class="medio-titulo">Video</p>
                 <div class="reproductor-marco">
                   <iframe src="https://www.youtube-nocookie.com/embed/C0yg5BQ_MIQ" title="Video del TP1: Rescate en el Cielo" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-              <div class="ventana reproductor">
-                <div class="ventana-barra" aria-hidden="true">
-                  <span class="punto"></span><span class="punto"></span><span class="punto"></span>
-                  <span class="ventana-titulo">jugar TP1</span>
-                </div>
+              <div class="medio">
+                <p class="medio-titulo">Juego</p>
                 <div class="reproductor-marco juego">
                   <iframe src="https://scratch.mit.edu/projects/1445161189/embed" title="Juego del TP1: Rescate en el Cielo" loading="lazy" allowfullscreen></iframe>
                 </div>
               </div>
-              <pre class="terminal" aria-label="Ficha del TP1"><span class="t-sistema">Entrega:</span>      TP1
-<span class="t-sistema">Herramienta:</span>  Scratch
-<span class="t-sistema">Formato:</span>      Programación en bloques
-<span class="t-sistema">Material:</span>     Carpeta en Google Drive</pre>
+              <dl class="ficha">
+                <dt>Entrega</dt><dd>TP1</dd>
+                <dt>Herramienta</dt><dd>Scratch</dd>
+                <dt>Formato</dt><dd>Programación en bloques</dd>
+                <dt>Material</dt><dd>Carpeta en Google Drive</dd>
+              </dl>
             </div>
           </article>
 
@@ -195,19 +143,18 @@ TP3  Godot
               </div>
             </div>
             <div class="proyecto-media">
-              <div class="ventana reproductor">
-                <div class="ventana-barra" aria-hidden="true">
-                  <span class="punto"></span><span class="punto"></span><span class="punto"></span>
-                  <span class="ventana-titulo">video TP2</span>
-                </div>
+              <div class="medio">
+                <p class="medio-titulo">Video</p>
                 <div class="reproductor-marco">
                   <iframe src="https://www.youtube-nocookie.com/embed/daBwGl_xTNQ" title="Video del TP2: Aventura RPG" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-              <pre class="terminal" aria-label="Ficha del TP2"><span class="t-sistema">Entrega:</span>      TP2
-<span class="t-sistema">Herramienta:</span>  RPG Maker MV
-<span class="t-sistema">Formato:</span>      Juego de rol con motor
-<span class="t-sistema">Material:</span>     Carpeta en Google Drive</pre>
+              <dl class="ficha">
+                <dt>Entrega</dt><dd>TP2</dd>
+                <dt>Herramienta</dt><dd>RPG Maker MV</dd>
+                <dt>Formato</dt><dd>Juego de rol con motor</dd>
+                <dt>Material</dt><dd>Carpeta en Google Drive</dd>
+              </dl>
             </div>
           </article>
 
@@ -233,19 +180,18 @@ TP3  Godot
               </div>
             </div>
             <div class="proyecto-media">
-              <div class="ventana reproductor">
-                <div class="ventana-barra" aria-hidden="true">
-                  <span class="punto"></span><span class="punto"></span><span class="punto"></span>
-                  <span class="ventana-titulo">video TP3</span>
-                </div>
+              <div class="medio">
+                <p class="medio-titulo">Video</p>
                 <div class="reproductor-marco">
                   <iframe src="https://www.youtube-nocookie.com/embed/6Knaz4jC62M" title="Video del TP3: Los Bathrooms de Arregui" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-              <pre class="terminal" aria-label="Ficha del TP3"><span class="t-sistema">Entrega:</span>      TP3
-<span class="t-sistema">Herramienta:</span>  Godot Engine
-<span class="t-sistema">Formato:</span>      Prototipo con motor de juegos
-<span class="t-sistema">Material:</span>     Carpeta en Google Drive</pre>
+              <dl class="ficha">
+                <dt>Entrega</dt><dd>TP3</dd>
+                <dt>Herramienta</dt><dd>Godot Engine</dd>
+                <dt>Formato</dt><dd>Prototipo con motor de juegos</dd>
+                <dt>Material</dt><dd>Carpeta en Google Drive</dd>
+              </dl>
             </div>
           </article>
         </div>
