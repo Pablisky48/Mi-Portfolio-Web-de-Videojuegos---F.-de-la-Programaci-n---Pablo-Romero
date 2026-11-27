@@ -642,6 +642,25 @@ h2::after {
   max-width: 34rem;
 }
 
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etiquetas li {
+  padding: 0.1rem 0.6rem;
+  font-family: var(--fuente-codigo);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--c);
+  background-color: var(--superficie);
+  border: 1px solid var(--c);
+}
+
 .proyecto-acciones {
   display: flex;
   flex-wrap: wrap;
