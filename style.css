@@ -628,7 +628,14 @@ h2::after {
   font-size: clamp(1.8rem, 3.5vw, 2.3rem);
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.proyecto-herramienta {
+  font-family: var(--fuente-pixel);
+  font-size: 1.1rem;
+  color: var(--c);
+  margin-bottom: 0.9rem;
 }
 
 .proyecto-info > p:not(.proyecto-tipo) {
