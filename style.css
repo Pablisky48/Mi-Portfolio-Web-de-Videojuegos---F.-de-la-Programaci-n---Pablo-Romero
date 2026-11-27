@@ -705,6 +705,10 @@ h2::after {
   background-color: #000;
 }
 
+.reproductor-marco.juego {
+  aspect-ratio: 485 / 402;
+}
+
 .reproductor-marco iframe {
   display: block;
   width: 100%;
